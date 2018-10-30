@@ -27,4 +27,5 @@ install:
 script:
   - ipcluster start -n 2 --daemon
   #- travis_wait 20 make test
-  - py.test tests
+  #- py.test tests
+  - make test
