@@ -20,7 +20,7 @@ matrix:
 cache: pip
 
 install:
-  - pip install numpy=1.15.1
+  - pip install numpy==1.15.1
   - pip install -r requirements-dev.txt
   - pip install -e .
 
