@@ -20,12 +20,12 @@ matrix:
 cache: pip
 
 install:
-  - pip install numpy
+  - pip install numpy=1.15.1
   - pip install -r requirements-dev.txt
   - pip install -e .
 
 script:
-  - ipcluster start -n 1 --daemon
+  - ipcluster start -n 2 --daemon
   #- travis_wait 20 make test
   #- py.test tests
   - make test
