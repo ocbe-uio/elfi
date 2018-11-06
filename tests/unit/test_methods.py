@@ -1,9 +1,9 @@
 import numpy as np
-import pytest
+# import pytest
 
-import elfi
-import elfi.examples.ma2 as exma2
-from elfi.methods.parameter_inference import ParameterInference
+# import elfi
+# import elfi.examples.ma2 as exma2
+# from elfi.methods.parameter_inference import ParameterInference
 
 
 # def test_no_model_parameters(simple_model):
