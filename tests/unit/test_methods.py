@@ -41,8 +41,10 @@ def test_smc(ma2):
     res.sample_means_summary(all=True)
 
     # Ensure prior pdf > 0 for samples
-    assert np.all(exma2.CustomPrior1.pdf(samples[:, 0], 2) > 0)
-    assert np.all(exma2.CustomPrior2.pdf(samples[:, 1], samples[:, 0], 1) > 0)
+    assert np.all(ma2.CustomPrior1.pdf(samples[:, 0], 2) > 0)
+    assert np.all(ma2.CustomPrior2.pdf(samples[:, 1], samples[:, 0], 1) > 0)
+    # assert np.all(exma2.CustomPrior1.pdf(samples[:, 0], 2) > 0)
+    # assert np.all(exma2.CustomPrior2.pdf(samples[:, 1], samples[:, 0], 1) > 0)
 
 
 # A superficial test to compensate for test_inference.test_BOLFI not being run on Travis
