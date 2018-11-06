@@ -1,7 +1,7 @@
 import numpy as np
-# import pytest
+import pytest
 
-# import elfi
+import elfi
 # import elfi.examples.ma2 as exma2
 # from elfi.methods.parameter_inference import ParameterInference
 
