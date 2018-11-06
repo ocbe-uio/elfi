@@ -4,6 +4,7 @@ import numpy as np
 import pytest
 
 import elfi
+import elfi.examples.ma2
 # from elfi.examples import ma2
 from elfi.methods.bo.utils import minimize, stochastic_optimization
 from elfi.model.elfi_model import NodeReference
