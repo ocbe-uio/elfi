@@ -4,7 +4,7 @@ import scipy.stats as ss
 
 import elfi
 from elfi.methods.parameter_inference import Rejection
-from elfi.utils import get_sub_seed
+# from elfi.utils import get_sub_seed
 
 
 def test_randomness(simple_model):
