@@ -6,11 +6,11 @@ import elfi
 from elfi.methods.parameter_inference import ParameterInference
 
 
-# def test_no_model_parameters(simple_model):
-#     simple_model.parameter_names = []
+def test_no_model_parameters(simple_model):
+    simple_model.parameter_names = []
 
-#     with pytest.raises(Exception):
-#         ParameterInference(simple_model, [])
+    with pytest.raises(Exception):
+        ParameterInference(simple_model, [])
 
 
 # @pytest.mark.usefixtures('with_all_clients')
