@@ -3,7 +3,7 @@ import pytest
 import scipy.stats as ss
 
 import elfi
-from elfi.utils import get_sub_seed
+#from elfi.utils import get_sub_seed
 
 
 def test_randomness(simple_model):
@@ -44,23 +44,23 @@ def test_global_random_state_usage(simple_model):
     assert random_state_equal(st1, st2)
 
 
-def test_get_sub_seed():
-    n = 100
-    seed = np.random.randint(2**31)
-    sub_seeds = []
-    for i in range(n):
-        sub_seeds.append(get_sub_seed(seed, i, n))
+# def test_get_sub_seed():
+#     n = 100
+#     seed = np.random.randint(2**31)
+#     sub_seeds = []
+#     for i in range(n):
+#         sub_seeds.append(get_sub_seed(seed, i, n))
 
-    assert len(np.unique(sub_seeds)) == n
+#     assert len(np.unique(sub_seeds)) == n
 
-    # Test the cached version
-    cache = {}
-    sub_seeds_cached = []
-    for i in range(n):
-        sub_seed = get_sub_seed(seed, i, n, cache=cache)
-        sub_seeds_cached.append(sub_seed)
+#     # Test the cached version
+#     cache = {}
+#     sub_seeds_cached = []
+#     for i in range(n):
+#         sub_seed = get_sub_seed(seed, i, n, cache=cache)
+#         sub_seeds_cached.append(sub_seed)
 
-    assert np.array_equal(sub_seeds, sub_seeds_cached)
+#     assert np.array_equal(sub_seeds, sub_seeds_cached)
 
 
 # # Helpers
