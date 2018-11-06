@@ -8,15 +8,15 @@ import elfi
 """This module tests the consistency of results when using the same seed."""
 
 
-def check_consistent_sample(sample, sample_diff, sample_same):
-    assert not np.array_equal(sample.outputs['t1'], sample_diff.outputs['t1'])
+# def check_consistent_sample(sample, sample_diff, sample_same):
+#     assert not np.array_equal(sample.outputs['t1'], sample_diff.outputs['t1'])
 
-    assert np.allclose(sample.outputs['t1'], sample_same.outputs['t1'])
-    assert np.allclose(sample.outputs['t2'], sample_same.outputs['t2'])
+#     assert np.allclose(sample.outputs['t1'], sample_same.outputs['t1'])
+#     assert np.allclose(sample.outputs['t2'], sample_same.outputs['t2'])
 
-    # BOLFI does not have d in its outputs
-    if 'd' in sample.outputs:
-        assert np.allclose(sample.outputs['d'], sample_same.outputs['d'])
+#     # BOLFI does not have d in its outputs
+#     if 'd' in sample.outputs:
+#         assert np.allclose(sample.outputs['d'], sample_same.outputs['d'])
 
 
 # @pytest.mark.usefixtures('with_all_clients')
