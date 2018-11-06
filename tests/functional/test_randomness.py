@@ -3,6 +3,7 @@ import pytest
 import scipy.stats as ss
 
 import elfi
+from elfi import Rejection
 from elfi.utils import get_sub_seed
 
 
@@ -20,10 +21,10 @@ def test_randomness2(simple_model):
     k1 = simple_model['k1']
 
     n = 30
-    samples1 = elfi.Rejection(k1, batch_size=3).sample(n).samples['k1']
+    samples1 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
     assert len(np.unique(samples1)) == n
 
-    samples2 = elfi.Rejection(k1, batch_size=3).sample(n).samples['k1']
+    samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
     assert not np.array_equal(samples1, samples2)
 
 
