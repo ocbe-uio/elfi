@@ -84,8 +84,10 @@ def skip_travis():
 def simple_model():
     m = elfi.ElfiModel()
     elfi.Constant(10, model=m, name='tau')
-    elfi.Prior('uniform', 0, m['tau'], size=1, model=m, name='k1')
-    elfi.Prior('normal', m['k1'], size=3, model=m, name='k2')
+    elfi.Prior('uniform', 0, 5, size=1, model=m, name='k1')
+    elfi.Prior('normal', 10, size=3, model=m, name='k2')
+    # elfi.Prior('uniform', 0, m['tau'], size=1, model=m, name='k1')
+    # elfi.Prior('normal', m['k1'], size=3, model=m, name='k2')
     return m
 
 
