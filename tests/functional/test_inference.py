@@ -163,7 +163,9 @@ def test_BOLFI():
     assert (np.allclose(grad_var, grad_cached_var))
 
     # test calculation of prior logpdfs
-    true_logpdf_prior = ma2.CustomPrior1.logpdf(x[0, 0], 2)
-    true_logpdf_prior += ma2.CustomPrior2.logpdf(x[0, 1], x[0, 0, ], 1)
+    # true_logpdf_prior = ma2.CustomPrior1.logpdf(x[0, 0], 2)
+    # true_logpdf_prior += ma2.CustomPrior2.logpdf(x[0, 1], x[0, 0, ], 1)
+    true_logpdf_prior = CustomPrior1.logpdf(x[0, 0], 2)
+    true_logpdf_prior += CustomPrior2.logpdf(x[0, 1], x[0, 0, ], 1)
 
     assert np.isclose(true_logpdf_prior, post.prior.logpdf(x[0, :]))
