@@ -55,13 +55,13 @@ def test_get_sub_seed():
     assert len(np.unique(sub_seeds)) == n
 
     # Test the cached version
-    cache = {}
-    sub_seeds_cached = []
-    for i in range(n):
-        sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
-        sub_seeds_cached.append(sub_seed)
+    # cache = {}
+    # sub_seeds_cached = []
+    # for i in range(n):
+    #     sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
+    #     sub_seeds_cached.append(sub_seed)
 
-    assert np.array_equal(sub_seeds, sub_seeds_cached)
+    # assert np.array_equal(sub_seeds, sub_seeds_cached)
 
 
 # # Helpers
