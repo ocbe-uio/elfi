@@ -2,7 +2,8 @@ import numpy as np
 import pytest
 
 import elfi
-import elfi.methods.bo.acquisition as acquisition
+#import elfi.methods.bo.acquisition as acquisition
+from elfi.methods.bo import acquisition
 from elfi.methods.bo.gpy_regression import GPyRegression
 
 
