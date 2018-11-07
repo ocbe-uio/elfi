@@ -47,7 +47,7 @@ def test_global_random_state_usage(simple_model):
 
 def test_get_sub_seed():
     # n = 100
-    n = 1
+    n = 100
     seed = np.random.randint(2**31)
     sub_seeds = []
     for i in range(n):
@@ -61,9 +61,9 @@ def test_get_sub_seed():
     for i in range(n):
         # sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
         # sub_seeds_cached.append(sub_seed)
-        # sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
+        sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
         # 
-        sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n))
+        # sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n))
 
     assert np.array_equal(sub_seeds, sub_seeds_cached)
 
