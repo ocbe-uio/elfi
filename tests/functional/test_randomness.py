@@ -49,8 +49,8 @@ def test_get_sub_seed():
     n = 100
     seed = np.random.randint(2**31)
     sub_seeds = []
-    # for i in range(n):
-    #     sub_seeds.append(get_sub_seed(seed, i, n))
+    for i in range(n):
+        sub_seeds.append(elfi.utils.get_sub_seed(seed, i, n))
 
 #     assert len(np.unique(sub_seeds)) == n
 
