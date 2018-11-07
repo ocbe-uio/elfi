@@ -54,7 +54,7 @@ def test_get_sub_seed():
 
     assert len(np.unique(sub_seeds)) == n
 
-    Test the cached version
+    # Test the cached version
     cache = {}
     sub_seeds_cached = []
     for i in range(n):
