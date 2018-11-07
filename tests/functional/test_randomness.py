@@ -46,7 +46,8 @@ def test_global_random_state_usage(simple_model):
 
 
 def test_get_sub_seed():
-    n = 100
+    # n = 100
+    n = 1
     seed = np.random.randint(2**31)
     sub_seeds = []
     for i in range(n):
