@@ -60,7 +60,8 @@ def test_get_sub_seed():
     for i in range(n):
         # sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
         # sub_seeds_cached.append(sub_seed)
-        sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
+        # sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
+        sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n))
 
     assert np.array_equal(sub_seeds, sub_seeds_cached)
 
