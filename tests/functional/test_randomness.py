@@ -21,11 +21,11 @@ def test_randomness2(simple_model):
     k1 = simple_model['k1']
 
     n = 30
-    # samples1 = Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
-    # assert len(np.unique(samples1)) == n
+    samples1 = elfi.methods.parameter_inference.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
+    assert len(np.unique(samples1)) == n
 
-    # samples2 = Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
-    # assert not np.array_equal(samples1, samples2)
+    samples2 = elfi.methods.parameter_inference.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
+    assert not np.array_equal(samples1, samples2)
 
 
 # If we want to test this with all clients, we need to to set the worker's random state
