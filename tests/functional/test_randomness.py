@@ -18,7 +18,7 @@ def test_randomness(simple_model):
 
 @pytest.mark.usefixtures('with_all_clients')
 def test_randomness2(simple_model0):
-    k1 = simple_model['k1']
+    k1 = simple_model0['k1']
 
     n = 30
     # mymodel = elfi.Rejection(simple_model0['k1'], batch_size=3)
