@@ -22,7 +22,7 @@ def test_randomness2(simple_model):
 
     n = 30
     # mymodel = elfi.Rejection(simple_model0['k1'], batch_size=3)
-    samples1 = elfi.Rejection(simple_model0['k1'], batch_size=100).sample(n_samples=n).samples['k1']
+    samples1 = elfi.Rejection(simple_model['k1'], batch_size=100).sample(n_samples=n).samples['k1']
     # rej = elfi.Rejection(simple_model['k1'], batch_size=3)
     # sample = rej.sample(n_samples=n, quantile=1)
     # samples1 = sample.samples['k1']
