@@ -19,7 +19,7 @@ def test_no_model_parameters(simple_model):
 @pytest.mark.usefixtures('with_all_clients')
 def test_smc(ma2):
     thresholds = [.5, .2]
-    N = 1000
+    N = 100
     smc = elfi.SMC(ma2['d'], batch_size=20000)
     res = smc.sample(N, thresholds=thresholds)
     dens = smc._prior.logpdf(res.samples_array)
