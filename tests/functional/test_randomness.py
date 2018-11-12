@@ -22,12 +22,12 @@ def test_randomness2(simple_model):
 
     n = 30
     # mymodel = elfi.Rejection(simple_model0['k1'], batch_size=3)
-    samples1 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
-    assert len(np.unique(samples1)) == n
+    # samples1 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
+    # assert len(np.unique(samples1)) == n
 
-    samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
+    # samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
     # samples2 = mymodel.sample(n).samples['k1']
-    assert not np.array_equal(samples1, samples2)
+    # assert not np.array_equal(samples1, samples2)
 
 
 # If we want to test this with all clients, we need to to set the worker's random state
@@ -47,27 +47,27 @@ def test_global_random_state_usage(simple_model):
     assert random_state_equal(st1, st2)
 
 
-# def test_get_sub_seed():
-#     # n = 100
-#     n = 100
-#     seed = np.random.randint(2**31)
-#     sub_seeds = []
-#     for i in range(n):
-#         sub_seeds.append(elfi.utils.get_sub_seed(seed, i, n))
+def test_get_sub_seed():
+    # n = 100
+    n = 100
+    seed = np.random.randint(2**31)
+    sub_seeds = []
+    for i in range(n):
+        sub_seeds.append(elfi.utils.get_sub_seed(seed, i, n))
 
-#     assert len(np.unique(sub_seeds)) == n
+    assert len(np.unique(sub_seeds)) == n
 
-#     # Test the cached version
-#     cache = {}
-#     sub_seeds_cached = []
-#     for i in range(n):
-#         # sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
-#         # sub_seeds_cached.append(sub_seed)
-#         sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
-#         # 
-#         # sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n))
+    # Test the cached version
+    cache = {}
+    sub_seeds_cached = []
+    for i in range(n):
+        # sub_seed = elfi.utils.get_sub_seed(seed, i, n, cache=cache)
+        # sub_seeds_cached.append(sub_seed)
+        sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n, cache=cache))
+        # 
+        # sub_seeds_cached.append(elfi.utils.get_sub_seed(seed, i, n))
 
-#     assert np.array_equal(sub_seeds, sub_seeds_cached)
+    assert np.array_equal(sub_seeds, sub_seeds_cached)
 
 
 # # Helpers
