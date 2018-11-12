@@ -42,39 +42,39 @@ def check_inference_with_informative_data(outputs, N, true_params, error_bound=0
         "\n\nNot |{} - {}| < {}\n".format(np.mean(t2), true_params['t2'], error_bound)
 
 
-@pytest.mark.usefixtures('with_all_clients')
-def test_rejection_with_quantile():
-    m, true_params = setup_ma2_with_informative_data()
+# @pytest.mark.usefixtures('with_all_clients')
+# def test_rejection_with_quantile():
+#     m, true_params = setup_ma2_with_informative_data()
 
-    quantile = 0.01
-    N = 1000
-    batch_size = 20000
-    rej = elfi.Rejection(m['d'], batch_size=batch_size)
-    res = rej.sample(N, quantile=quantile)
+#     quantile = 0.01
+#     N = 1000
+#     batch_size = 20000
+#     rej = elfi.Rejection(m['d'], batch_size=batch_size)
+#     res = rej.sample(N, quantile=quantile)
 
-    check_inference_with_informative_data(res.samples, N, true_params)
+#     check_inference_with_informative_data(res.samples, N, true_params)
 
-    # Check that there are no repeating values indicating a seeding problem
-    assert len(np.unique(res.discrepancies)) == N
+#     # Check that there are no repeating values indicating a seeding problem
+#     assert len(np.unique(res.discrepancies)) == N
 
-    assert res.accept_rate == quantile
-    assert res.n_sim == int(N / quantile)
+#     assert res.accept_rate == quantile
+#     assert res.n_sim == int(N / quantile)
 
 
-@pytest.mark.usefixtures('with_all_clients')
-def test_rejection_with_threshold():
-    m, true_params = setup_ma2_with_informative_data()
+# @pytest.mark.usefixtures('with_all_clients')
+# def test_rejection_with_threshold():
+#     m, true_params = setup_ma2_with_informative_data()
 
-    t = .1
-    N = 1000
-    rej = elfi.Rejection(m['d'], batch_size=20000)
-    res = rej.sample(N, threshold=t)
+#     t = .1
+#     N = 1000
+#     rej = elfi.Rejection(m['d'], batch_size=20000)
+#     res = rej.sample(N, threshold=t)
 
-    check_inference_with_informative_data(res.samples, N, true_params)
+#     check_inference_with_informative_data(res.samples, N, true_params)
 
-    assert res.threshold <= t
-    # Test that we got unique samples (no repeating of batches).
-    assert len(np.unique(res.discrepancies)) == N
+#     assert res.threshold <= t
+#     # Test that we got unique samples (no repeating of batches).
+#     assert len(np.unique(res.discrepancies)) == N
 
 
 @pytest.mark.usefixtures('with_all_clients')
