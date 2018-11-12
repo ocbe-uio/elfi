@@ -27,10 +27,10 @@ def test_randomness2(simple_model):
     # sample = rej.sample(n_samples=n, quantile=1)
     # samples1 = sample.samples['k1']
     assert len(np.unique(samples1)) == n
-
+    samples2 = elfi.Rejection(simple_model['k1'], batch_size=1000).sample(n_samples=n).samples['k1']
     # samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
     # samples2 = mymodel.sample(n).samples['k1']
-    # assert not np.array_equal(samples1, samples2)
+    assert not np.array_equal(samples1, samples2)
 
 
 # If we want to test this with all clients, we need to to set the worker's random state
