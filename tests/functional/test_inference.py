@@ -29,17 +29,17 @@ def setup_ma2_with_informative_data():
     return m, true_params
 
 
-def check_inference_with_informative_data(outputs, N, true_params, error_bound=0.05):
-    t1 = outputs['t1']
-    t2 = outputs['t2']
+# def check_inference_with_informative_data(outputs, N, true_params, error_bound=0.05):
+#     t1 = outputs['t1']
+#     t2 = outputs['t2']
 
-    if N > 1:
-        assert len(t1) == N
+#     if N > 1:
+#         assert len(t1) == N
 
-    assert np.abs(np.mean(t1) - true_params['t1']) < error_bound, \
-        "\n\nNot |{} - {}| < {}\n".format(np.mean(t1), true_params['t1'], error_bound)
-    assert np.abs(np.mean(t2) - true_params['t2']) < error_bound, \
-        "\n\nNot |{} - {}| < {}\n".format(np.mean(t2), true_params['t2'], error_bound)
+#     assert np.abs(np.mean(t1) - true_params['t1']) < error_bound, \
+#         "\n\nNot |{} - {}| < {}\n".format(np.mean(t1), true_params['t1'], error_bound)
+#     assert np.abs(np.mean(t2) - true_params['t2']) < error_bound, \
+#         "\n\nNot |{} - {}| < {}\n".format(np.mean(t2), true_params['t2'], error_bound)
 
 
 # @pytest.mark.usefixtures('with_all_clients')
