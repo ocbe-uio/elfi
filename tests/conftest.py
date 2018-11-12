@@ -80,7 +80,7 @@ def skip_travis():
 """Model fixtures"""
 
 @pytest.fixture()
-def simple_model0():
+def simple_model():
     m = elfi.ElfiModel()
     elfi.Constant(10, model=m, name='tau')
     elfi.Prior('uniform', 0, 5, size=1, model=m, name='k1')
@@ -90,7 +90,7 @@ def simple_model0():
     return m
 
 @pytest.fixture()
-def simple_model():
+def simple_model0():
     m0 = elfi.ElfiModel()
     elfi.Constant(10, model=m0, name='tau')
     # elfi.Prior('uniform', 0, 5, size=1, model=m, name='k1')
