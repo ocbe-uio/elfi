@@ -21,10 +21,10 @@ def test_randomness2(simple_model):
     k1 = simple_model['k1']
 
     n = 30
-    samples1 = elfi.SMC(simple_model['k1'], batch_size=3).sample(n,[5,2]).samples['k1']
+    samples1 = elfi.Rejection(simple_model['k1'], batch_size=1).sample(n).samples['k1']
     assert len(np.unique(samples1)) == n
 
-    samples2 = elfi.SMC(simple_model['k1'], batch_size=3).sample(n,[5,2]).samples['k1']
+    samples2 = elfi.Rejection(simple_model['k1'], batch_size=1).sample(n).samples['k1']
     assert not np.array_equal(samples1, samples2)
 
 
