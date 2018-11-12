@@ -24,7 +24,7 @@ def test_randomness2(simple_model):
     # mymodel = elfi.Rejection(simple_model0['k1'], batch_size=3)
     # samples1 = elfi.Rejection(simple_model0['k1'], batch_size=3).sample(n).samples['k1']
     rej = elfi.Rejection(simple_model['k1'], batch_size=3)
-    # sample = rej.sample(n)
+    sample = rej.sample(n)
     # samples1 = sample.samples['k1']
     # assert len(np.unique(samples1)) == n
 
