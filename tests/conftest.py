@@ -30,8 +30,9 @@ def pytest_addoption(parser):
 
 """Functional fixtures"""
 
+# @pytest.fixture(scope="session", params=[native, mp])
 # @pytest.fixture(scope="session", params=[native, eipp, mp])
-@pytest.fixture(scope="session", params=[native, mp])
+@pytest.fixture(scope="session", params=[eipp])
 def client(request):
     """Provides a fixture for all the different supported clients
     """
