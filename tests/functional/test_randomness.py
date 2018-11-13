@@ -22,12 +22,12 @@ def test_randomness2(simple_model):
 
     n = 30
     # mymodel = elfi.Rejection(simple_model0['k1'], batch_size=3)
-    samples1 = elfi.Rejection(simple_model['k1'], batch_size=3, max_parallel_batches = 2).sample(n_samples=n, bar=False).samples['k1']
+    samples1 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n_samples=n, bar=False).samples['k1']
     # rej = elfi.Rejection(simple_model['k1'], batch_size=3)
     # sample = rej.sample(n_samples=n, quantile=1)
     # samples1 = sample.samples['k1']
     assert len(np.unique(samples1)) == n
-    samples2 = elfi.Rejection(simple_model['k1'], batch_size=3, max_parallel_batches = 2).sample(n_samples=n, bar=False).samples['k1']
+    samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n_samples=n, bar=False).samples['k1']
     # samples2 = elfi.Rejection(simple_model['k1'], batch_size=3).sample(n).samples['k1']
     # samples2 = mymodel.sample(n).samples['k1']
     assert not np.array_equal(samples1, samples2)
