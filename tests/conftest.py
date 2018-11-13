@@ -31,7 +31,8 @@ def pytest_addoption(parser):
 """Functional fixtures"""
 
 
-@pytest.fixture(scope="session", params=[native, eipp, mp])
+# @pytest.fixture(scope="session", params=[native, eipp, mp])
+@pytest.fixture(scope="session", params=[native, mp])
 def client(request):
     """Provides a fixture for all the different supported clients
     """
@@ -69,7 +70,7 @@ def use_logging():
     logging.getLogger('elfi.executor').setLevel(logging.WARNING)
     logging.getLogger('elfi.compiler').setLevel(logging.WARNING)
 
-
+sleeper
 @pytest.fixture()
 def skip_travis():
     if "TRAVIS" in os.environ and os.environ['TRAVIS'] == "true":

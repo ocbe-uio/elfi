@@ -4,7 +4,6 @@ tox>=2.4.1
 coverage>=4.2
 pytest-cov>=2.4.0
 pytest-rerunfailures>=4.1
-pickleshare==0.7.4
 
 # Linting
 flake8>=3.0.4
