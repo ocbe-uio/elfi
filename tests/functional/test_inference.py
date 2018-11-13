@@ -48,7 +48,8 @@ def test_rejection_with_quantile():
 
     quantile = 0.01
     N = 1000
-    batch_size = 20000
+    # batch_size = 20000
+    batch_size = 200
     rej = elfi.Rejection(m['d'], batch_size=batch_size)
     res = rej.sample(N, quantile=quantile)
 
