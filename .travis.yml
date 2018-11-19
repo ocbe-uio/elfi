@@ -29,3 +29,4 @@ script:
   #- travis_wait 20 make test
   #- py.test tests
   - make test
+  - ipcluster stop
